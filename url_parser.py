@@ -12,9 +12,9 @@ BASE_URL = 'https://search.naver.com/search.naver'
 # modify the value
 DRIVER_PATH = "./chromedriver"
 URL_DIR = "link/"
-SEARCH_KEYWORD = "암"
-START_DATE = "2018.12.15"
-END_DATE =  "2018.12.31"
+SEARCH_KEYWORD = "암+건강"
+START_DATE = "2019.12.15"
+END_DATE =  "2019.12.31"
 JOURNAL_NAME = "경향신문"# 동아일보, 조선일보, 중앙일보, 한겨레, 경향신문 중 택1
 PAGE_LIMIT = 5
 
@@ -60,7 +60,8 @@ if __name__ == "__main__":
     sleep(1)
 
     # order latest
-    driver.find_element_by_xpath('//*[@id="main_pack"]/div[2]/div[1]/div[3]/ul/li[2]/a').click() #최신순
+    driver.execute_script('news_submit_sort_option(1, 0);')
+    #driver.find_element_by_xpath('//*[@id="main_pack"]/div[2]/div[1]/div[3]/ul/li[2]/a').click() #최신순
     sleep(1)
 
 # parsing
